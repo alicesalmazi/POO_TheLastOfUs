@@ -13,10 +13,10 @@ public class Item
         get {return nome;} 
         set
         {
-        // Propriedades públicas (get/set) com validação: Nome não pode ser vazio, 
-            if (value != null)
+        // Propriedades públicas (get/set) com validação: Nome não pode ser vazio
+            if (value == null)
             {
-                Console.WriteLine("Nome não pode ser vazio!");
+                throw new Exception("Nome não pode ser vazio!");
             }
             nome = value;
 
@@ -29,25 +29,25 @@ public class Item
         get {return quantidade;} 
         set
         {
-        // Quantidade não pode ser negativa, 
+        // Propriedades públicas (get/set) com validação: Quantidade não pode ser negativa
             if (value < 0)
             {
-                Console.WriteLine("Quantidade não pode ser negativa!");
+                throw new Exception("Quantidade não pode ser negativa!");
             }
             quantidade = value;
         }
     }
 
-    private int pesoUnitario;
-    public int PesoUnitario 
+    private double pesoUnitario;
+    public double PesoUnitario 
     {
-        // PesoUnitario não pode ser zero ou negativo.
+        // Propriedades públicas (get/set) com validação: PesoUnitario não pode ser zero ou negativo.
         get {return pesoUnitario;} 
         set
         {
             if (value <= 0)
             {
-                Console.WriteLine("Peso não pode ser 0 ou negativo!");
+                throw new Exception("Peso não pode ser 0 ou negativo!");
             }
             pesoUnitario = value;   
         }
@@ -55,8 +55,7 @@ public class Item
     // Método double PesoTotal() que calcula quantidade * pesoUnitario.
     public double PesoTotal()
     {
-        pesoTotal = quantidade * pesoUnitario;
-        return pesoTotal;
+        return quantidade * pesoUnitario;
     }
 
 }

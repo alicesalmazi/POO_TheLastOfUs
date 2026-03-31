@@ -1,5 +1,7 @@
-﻿namespace TLOU___ATV;
+﻿using System.Net.ServerSentEvents;
+using System.Runtime.CompilerServices;
 
+namespace TLOU___ATV;
 
 // Classe Mochila:
 
@@ -14,31 +16,21 @@ public class Mochila
     private int numeroSlots;
 
     // Atributo privado: List<Item> itens.
-    private List<Item> itens;
-
-    // Propriedade do atributo itens
-    public List Itens
-    {
-        get {itens;}
-        set {
-            itens.Add(value);
-        }
-    }
+    private List<Item> itens = new List<Item>();
 
     // Atributo
-    private double pesoAtual;
-
-    // Propriedade double PesoAtual(get) que soma o peso total de todos os itens.
-    public double PesoAtual
+    private double pesoAtual
     {
-        get {return pesoAtual;}
-        set
+        get
         {
-            pesoAtual ;
+            double varSoma = 0;
+            foreach (var item in itens)
+            {
+                varSoma += item.PesoTotal();
+            }
+            return varSoma;
         }
     }
-
-    private int slotsOcupados{get;}
 
     // (desafio: respeitar limite de peso ou slots? Crie um limite fictício).
     public Mochila()
@@ -48,36 +40,62 @@ public class Mochila
     }
 
     // Método bool AdicionarItem(Item novoItem): Se o item já existe (mesmo nome), aumenta a quantidade 
-    public bool adicionarItem(Item novoItem)
+    public bool AdicionarItem(Item novoItem)
     {
-        if (itens.Contains(novoItem))
+        double pesoNovoItem = novoItem.PesoTotal();
+
+        if (this.pesoAtual + pesoNovoItem > pesoMaximo)
         {
-            Item += 1;
+            return false;
         }
-        if (itens.Count() = numeroSlots)
+
+        var itemNaMochila = itens.Find(i => i.Nome == novoItem.Nome);
+
+        // Desafio: Implementar um evento que alerta quando a mochila está quase cheia (acima de 90% da capacidade).
+        if (itemNaMochila != null)
         {
-            
+            itemNaMochila.Quantidade += novoItem.Quantidade;
         }
+        else
+        {
+            if (itens.Count >= numeroSlots)
+            {
+                return false;  
+            } 
+            itens.Add(novoItem);
+        }
+
+        if (this.pesoAtual >= this.pesoMaximo * 0.9)
+        {
+            OnCapacidadeQuaseCheiaHandler(EventArgs.Empty);
+        }
+        return true;
     }
     
     // Método bool UsarItem(string nomeItem): Diminui a quantidade em 1. Se chegar a zero, remove da lista.
     public bool UsarItem(string nomeItem)
     {
-        if (itens = 1)
+        var itemDaMochila = itens.Find(i => i.Nome == nomeItem);
+
+        if (itemDaMochila != null)
         {
-            itens.Remove(nomeItem);
+            itemDaMochila.Quantidade -= 1;
+
+            if (itemDaMochila.Quantidade <= 0)
+            {
+                itens.Remove(itemDaMochila);
+            }
+            return true;
         }
-        itens -= 1;
+        return false;
     }
 
     // Desafio: Implementar um evento que alerta quando a mochila está quase cheia (acima de 90% da capacidade).
-    private event System.EventHandler capacidadeBaixa;
-    
-    public void Capacidade(double quantidade)
+    public event EventHandler OnCapacidadeQuaseCheia;
+    // Se herdarem essa classe 'Mochila', o 'virtual' autoriza a modificarem esse método
+    public virtual void OnCapacidadeQuaseCheiaHandler(EventArgs e)
     {
-        if (quantidade >= pesoMaximo * 0.9)
-        {
-            
-        }
+        OnCapacidadeQuaseCheia?.Invoke(this, e);
     }
 }
+

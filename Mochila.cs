@@ -97,11 +97,11 @@ public class Mochila
         {
             foreach (var item in itens)
             {
-                Console.WriteLine($"- {item.Nome}: {item.quantidade} un. (Peso total: {item.PesoTotal()}kg.)");
+                Console.WriteLine($"- {item.Nome}: {item.Quantidade} un. (Peso total: {item.PesoTotal()}kg.)");
             }
-            Console.Write($"Peso atual da mochila: {this.pesoAtual} kg. / {this.pesoMaximo} kg.")
+            Console.Write($"Peso atual da mochila: {this.pesoAtual} kg. / {this.pesoMaximo} kg.");
         }
-        Console.WriteLine("-----------------------\n");
+        Console.WriteLine("\n---------------\n");
     }
 
     // Desafio: Implementar um evento que alerta quando a mochila está quase cheia (acima de 90% da capacidade).

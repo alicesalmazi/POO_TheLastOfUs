@@ -5,7 +5,7 @@ public class Item
 {
 
     // Atributos privados: string nome, int quantidade, int pesoUnitario.
-    private string nome;
+    private string nome = string.Empty;
     //Propriedade do atributo nome
     public string Nome 
     {

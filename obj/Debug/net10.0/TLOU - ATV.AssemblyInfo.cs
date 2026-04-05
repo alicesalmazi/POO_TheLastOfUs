@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TLOU - ATV")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac97b93db1a015fee884e1543755d66dc8f9ca57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15bf8b2b9f77dd351f55b1ad157c0dcc29a97a7f")]
 [assembly: System.Reflection.AssemblyProductAttribute("TLOU - ATV")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TLOU - ATV")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

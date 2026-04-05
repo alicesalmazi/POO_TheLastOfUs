@@ -1,0 +1,15 @@
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\obj\Debug\net8.0\TLOU - ATV.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\obj\Debug\net8.0\TLOU - ATV.AssemblyInfoInputs.cache
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\obj\Debug\net8.0\TLOU - ATV.AssemblyInfo.cs
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\obj\Debug\net8.0\TLOU - ATV.csproj.CoreCompileInputs.cache
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\obj\Debug\net8.0\TLOU - ATV.sourcelink.json
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\bin\Debug\net8.0\TLOU - ATV.exe
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\bin\Debug\net8.0\TLOU - ATV.deps.json
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\bin\Debug\net8.0\TLOU - ATV.runtimeconfig.json
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\bin\Debug\net8.0\TLOU - ATV.dll
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\bin\Debug\net8.0\TLOU - ATV.pdb
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\obj\Debug\net8.0\TLOU - ATV.dll
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\obj\Debug\net8.0\refint\TLOU - ATV.dll
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\obj\Debug\net8.0\TLOU - ATV.pdb
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\obj\Debug\net8.0\TLOU - ATV.genruntimeconfig.cache
+C:\Users\alice.salmazi\OneDrive - Adventistas\Downloads\POO\TLOU - ATV\obj\Debug\net8.0\ref\TLOU - ATV.dll

@@ -1,6 +1,5 @@
 ﻿namespace TLOU___ATV;
 
-
 // Classe Item:
 public class Item
 {

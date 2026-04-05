@@ -1,14 +1,9 @@
-﻿using System.Net.ServerSentEvents;
-using System.Runtime.CompilerServices;
-
-namespace TLOU___ATV;
+﻿namespace TLOU___ATV;
 
 // Classe Mochila:
 
 public class Mochila
 {
-    public 
-
     // Atributo
     private double pesoMaximo;
 
@@ -75,7 +70,7 @@ public class Mochila
     // Método bool UsarItem(string nomeItem): Diminui a quantidade em 1. Se chegar a zero, remove da lista.
     public bool UsarItem(string nomeItem)
     {
-        var itemDaMochila = itens.Find(i => i.Nome == nomeItem);
+        var itemDaMochila = itens.Find(i => i.Nome.Equals (nomeItem, StringComparison.OrdinalIgnoreCase));
 
         if (itemDaMochila != null)
         {
@@ -90,8 +85,27 @@ public class Mochila
         return false;
     }
 
+    // Método de exibir itens (por conta de lista ser privado)
+    public void ExibirItens()
+    {
+        Console.WriteLine("\n--- MOCHILA ---");
+        if (itens.Count == 0)
+        {
+            Console.WriteLine("Mochila vazia!");
+        }
+        else
+        {
+            foreach (var item in itens)
+            {
+                Console.WriteLine($"- {item.Nome}: {item.quantidade} un. (Peso total: {item.PesoTotal()}kg.)");
+            }
+            Console.Write($"Peso atual da mochila: {this.pesoAtual} kg. / {this.pesoMaximo} kg.")
+        }
+        Console.WriteLine("-----------------------\n");
+    }
+
     // Desafio: Implementar um evento que alerta quando a mochila está quase cheia (acima de 90% da capacidade).
-    public event EventHandler OnCapacidadeQuaseCheia;
+    public event EventHandler? OnCapacidadeQuaseCheia;
     // Se herdarem essa classe 'Mochila', o 'virtual' autoriza a modificarem esse método
     public virtual void OnCapacidadeQuaseCheiaHandler(EventArgs e)
     {
